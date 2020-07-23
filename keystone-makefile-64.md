@@ -186,4 +186,4 @@ exit QEMU by:	$ poweroff
 
 | Back | Next |
 | :--- | ---: |
-| [Initial Setup](./init.md) | [Keystone (using Makefile) for RV32 Build](./keystone-makefile-32.md) |
+| [Initial Setup](./init.md) | [Keystone (using CMake) for RV64 Build](./keystone-makefile-64.md) |
