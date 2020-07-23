@@ -216,4 +216,4 @@ $ ./scripts/run-qemu.sh
 
 | Back | Next |
 | :--- | ---: |
-| [Keystone (using Makefile) for RV32 Build](./keystone-makefile-32.md) | [Turn on drivers in Keystone](./keystone-drivers.md) |
+| [Keystone (using Makefile) for RV64 Build](./keystone-makefile-64.md) | [SiFive Freedom](./freedom.md) |
