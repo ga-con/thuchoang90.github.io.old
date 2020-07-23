@@ -8,8 +8,6 @@ layout : default
 
 # I. Program the board
 
-## I. a) VC707
-
 Remember to switch the switches above the LCD to UP-UP-DOWN-UP-DOWN,
 then open vivado, open hardware manager, open target board, auto connect.
 
@@ -30,19 +28,6 @@ Vivado flash programming:
 	f. select the RS pins: 25:24
 	g. OK to write data to the flash
 	h. finally, right-click again on the xc7vx485t_0 and select Boot from Configuration Memory Device
-
-## I. b) DE4 & TR4
-
-Both DE4 and TR4 FPGA boards share the same programming procedure.
-
-Power on the board, plugin the cable, then open Quartus and click on the 'Programmer' icon *(or in the top menu -> Tool -> Programmer)*. A Programmer window will appear:
-
-	a. Check the 'Hardware Setup..' on the top-left to see if it recognized the usb port or not.
-	   If it shows 'No hardware..' then your computer not yet recognizes the cable.
-	   If it shows 'USB-Blaster [USB-x]' then okay to continue
-	b. Click 'Auto Detect' then choose the first one of 'EP4SGX230' then hit 'OK'
-	c. Double-click on the <none> in the tab 'File' and browse to the .sof file
-	d. Tick on the 'Program/Configure' then hit 'Start' to program the board, and wait for it to finish
 
 # II. Debug with GDB via JTAG
 
@@ -117,8 +102,6 @@ Some useful tips for debugging the RISC-V CPU:
 
 # III. Connections
 
-## III. a) VC707
-
 Connect your Olimex JTAG debugger to the VC707 FPGA board by the XADC (J19) header as shown as follows:
 
 ![Branching](./jtag-20pin.png)
@@ -130,15 +113,5 @@ The four data pins TDI (pin 5), TMS (pin 7), TCLK (pin 9), and TDO (pin 13) are 
 The UART uses the USB-to-UART connection on the board.
 
 The SD-card uses the SD-card slot on the board
-
-VC707 don't have enough pins for USB and QSPI.
-
-## III. b) DE4 & TR4
-
-DE4 and TR4 use two 40-pin GPIO on the board. The connections are described as follow.
-
-![Branching](./GPIOConnect.png)
-
-**Note:** the DE4 board uses on-board RS232/COM port for UART and SD-card slot for SD-card.
 
 * * *
