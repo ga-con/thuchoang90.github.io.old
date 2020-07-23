@@ -52,7 +52,6 @@ Then:
 
 	$ cd <your riscv-openocd/ folder>
 	$ openocd -f riscv-openocd.cfg
-	or if you using flash: $ openocd -f riscv-openocd-flash.cfg
 
 If succeed, it will print something like this:
 
