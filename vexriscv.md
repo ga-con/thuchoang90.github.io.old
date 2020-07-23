@@ -326,7 +326,7 @@ For ROHM chip fabricated in Jan. 2020:
 
 # BOTTOM PAGE
 
-| Back | Next |
-| :--- | ---: |
-| [SiFive Freedom](./vc707.md) | [TEE-Hardware](./tee-hw.md) |
+| Back |
+| :--- |
+| [SiFive Freedom](./vc707.md) |
 
