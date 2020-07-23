@@ -197,7 +197,7 @@ $ make -j`nproc`
 $ sudo make install -j`nproc`
 ```
 
-Configuration files for RISC-V CPU: [without Flash/QSPI](./riscv-openocd.cfg) and [with Flash/QSPI](./riscv-openocd-flash.cfg).
+Configuration files for RISC-V CPU: [riscv-openocd](./riscv-openocd.cfg)
 You should download them and put them under the riscv-openocd/ folder.
 
 ## II. h) Vivado 2016.4
