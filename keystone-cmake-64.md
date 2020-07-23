@@ -216,4 +216,4 @@ $ ./scripts/run-qemu.sh
 
 | Back | Next |
 | :--- | ---: |
-| [Keystone (using Makefile) for RV64 Build](./keystone-makefile-64.md) | [SiFive Freedom](./freedom.md) |
+| [Keystone (using Makefile) for RV64 Build](./keystone-makefile-64.md) | [SiFive Freedom](./vc707.md) |
