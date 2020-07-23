@@ -23,13 +23,10 @@ The guide in this tutorial has the following contents:
 - Keystone: TEE framework *(using Makefile)*
 
   * [For RV64 Build](./keystone-makefile-64.md)
-  * [For RV32 Build](./keystone-makefile-32.md)
 
 - Keystone: TEE framework *(using CMake)* *(\*newer\*)* *Right now CMake doesn't work on FPGA (although it worked perfeclty on QEMU)*
 
   * [For RV64 Build](./keystone-cmake-64.md)
-
-- [Turn on drivers in Keystone](./keystone-drivers.md)
 
 * * *
 
