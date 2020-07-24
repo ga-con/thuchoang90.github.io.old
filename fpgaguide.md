@@ -29,6 +29,8 @@ Vivado flash programming:
 	g. OK to write data to the flash
 	h. finally, right-click again on the xc7vx485t_0 and select Boot from Configuration Memory Device
 
+* * *
+
 # II. Debug with GDB via JTAG
 
 Using the Olimex JTAG debugger. Ref [link](https://www.olimex.com/Products/ARM/JTAG/ARM-USB-TINY-H/).
@@ -98,6 +100,8 @@ Some useful tips for debugging the RISC-V CPU:
 	Write to address:		$ set *0x...=0x...
 	Read from address:		$ print/x *0x...
 	Reset CPU:			$ monitor reset halt
+
+* * *
 
 # III. Connections
 
