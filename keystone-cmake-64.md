@@ -6,8 +6,6 @@ layout : default
 
 * * *
 
-**NOTE: right now CMake doesn't work on FPGA (although it worked perfectly on QEMU)**
-
 # I. Keystone
 
 ## I. a) Using their prebuilt toolchain (gcc-7.2)
@@ -16,7 +14,7 @@ Note: because their prebuilt toolchain is RV64GC, so for the RV64IMAC build plea
 
 Git clone:
 ```
-$ git clone https://github.com/keystone-enclave/keystone.git keystone-rv64gc	#commit be61c6e3 on 6-May-2020
+$ git clone https://github.com/keystone-enclave/keystone.git keystone-rv64gc	#commit 21c77189 on 30-Aug-2020
 $ cd keystone-rv64gc/
 ```
 
@@ -32,22 +30,27 @@ Download prebuilt toolchain:
 $ ./fast-setup.sh			#this will download the prebuilt toolchain (gcc-7.2) and set things up
 ```
 
-Create build folder:
+Make sure that the sdk is properly built:
+```
+$ cd sdk/
+$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
+(this line is for FPGA board, because usually there is only 1GB of memory on the board)
+$ rm -rf build		#remove build folder if existed
+$ mkdir build		#make a fresh build folder
+$ cd build/
+$ cmake ..
+$ make -j`nproc`
+$ make install
+$ export KEYSTONE_SDK_DIR=`pwd`
+$ cd ../../		#back outside
+```
+
+Create build folder then make:
 ```
 $ mkdir build
 $ cd build/
-```
-
-Make:
-```
 $ cmake ..
 $ make -j`nproc`
-```
-
-Build the keystone-test:
-```
-$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' ../tests/tests/test-runner.cpp
-(this line is for FPGA board, because usually there is only 1GB of memory on the board)
 $ make run-tests	#after this, a bbl.bin file is generated
 ```
 
