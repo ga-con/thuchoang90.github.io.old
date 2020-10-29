@@ -21,7 +21,6 @@ $ cd keystone-rv64gc/
 Check PATH:
 ```
 $ echo ${PATH}			#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH
-$ . source.sh
 $ export KEYSTONE_DIR=`pwd`
 ```
 
@@ -30,18 +29,14 @@ Download prebuilt toolchain:
 $ ./fast-setup.sh			#this will download the prebuilt toolchain (gcc-7.2) and set things up
 ```
 
-Make sure that the sdk is properly built:
+Prepare the sdk folder and PATH:
 ```
 $ cd sdk/
 $ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
 (this line is for FPGA board, because usually there is only 1GB of memory on the board)
-$ rm -rf build		#remove build folder if existed
-$ mkdir build		#make a fresh build folder
 $ cd build/
-$ cmake ..
-$ make -j`nproc`
-$ make install
 $ export KEYSTONE_SDK_DIR=`pwd`
+$ make examples
 $ cd ../../		#back outside
 ```
 
@@ -91,13 +86,9 @@ Make sure that the sdk is properly built:
 $ cd sdk/
 $ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
 (this line is for FPGA board, because usually there is only 1GB of memory on the board)
-$ rm -rf build		#remove build folder if existed
-$ mkdir build		#make a fresh build folder
 $ cd build/
-$ cmake ..
-$ make -j`nproc`
-$ make install
 $ export KEYSTONE_SDK_DIR=`pwd`
+$ make examples
 $ cd ../../		#back outside
 ```
 
