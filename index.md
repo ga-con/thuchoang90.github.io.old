@@ -24,7 +24,7 @@ The guide in this tutorial has the following contents:
 
   * [For RV64 Build](./keystone-makefile-64.md)
 
-- Keystone: TEE framework *(using CMake)* *(\*newer\*)* *Right now CMake doesn't work on FPGA (although it worked perfeclty on QEMU)*
+- Keystone: TEE framework *(using CMake)* *(\*upstream\*)*
 
   * [For RV64 Build](./keystone-cmake-64.md)
 
