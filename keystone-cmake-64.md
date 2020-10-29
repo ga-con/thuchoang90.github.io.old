@@ -74,7 +74,6 @@ If build for RV64IMAC:		$ export RISCV=/opt/GCC8/riscv64imac		#point to RV64IMAC
 
 $ export PATH=$RISCV/bin/:$PATH
 $ export KEYSTONE_DIR=`pwd`
-$ export KEYSTONE_SDK_DIR=`pwd`/sdk
 ```
 
 Update submodule:
@@ -87,23 +86,28 @@ Do the following if build for RV64IMAC, skip if build for RV64GC:
 $ ./patches/imac-patch.sh
 ```
 
-Create build folder:
+Make sure that the sdk is properly built:
+```
+$ cd sdk/
+$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
+(this line is for FPGA board, because usually there is only 1GB of memory on the board)
+$ rm -rf build		#remove build folder if existed
+$ mkdir build		#make a fresh build folder
+$ cd build/
+$ cmake ..
+$ make -j`nproc`
+$ make install
+$ export KEYSTONE_SDK_DIR=`pwd`
+$ cd ../../		#back outside
+```
+
+Create build folder then make:
 ```
 $ mkdir build
 $ cd build/
-```
-
-Make:
-```
 $ cmake ..
 $ make -j`nproc`
-```
-
-Build the keystone-test:
-```
-$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' ../tests/tests/test-runner.cpp
-(this line is for FPGA board, because usually there is only 1GB of memory on the board)
-$ make run-tests		#after this, a bbl.bin file is generated
+$ make run-tests	#after this, a bbl.bin file is generated
 ```
 
 * * *
