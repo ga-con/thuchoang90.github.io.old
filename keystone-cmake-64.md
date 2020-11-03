@@ -27,13 +27,13 @@ $ export KEYSTONE_DIR=`pwd`
 Download prebuilt toolchain:
 ```
 $ ./fast-setup.sh			#this will download the prebuilt toolchain (gcc-7.2) and set things up
-$ . source.sh
+$ . source.sh		#update PATH
 ```
 
-Prepare the sdk folder and PATH:
+Update sdk examples:
 ```
 $ cd sdk/
-$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
+$ sed -i 's/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g' examples/tests/test-runner.cpp
 (this line is for FPGA board, because usually there is only 1GB of memory on the board)
 $ cd build/
 $ make examples
@@ -84,7 +84,7 @@ $ ./patches/imac-patch.sh
 Make sure that the sdk is properly built:
 ```
 $ cd sdk/
-$ sed -i 's/size_t\sfreemem_size\s=\s48\*1024\*1024/size_t freemem_size = 2*1024*1024/g' examples/tests/test-runner.cpp
+$ sed -i 's/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g' examples/tests/test-runner.cpp
 (this line is for FPGA board, because usually there is only 1GB of memory on the board)
 $ cd build/
 $ export KEYSTONE_SDK_DIR=`pwd`
