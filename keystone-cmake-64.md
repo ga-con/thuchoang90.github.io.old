@@ -81,7 +81,7 @@ Do the following if build for RV64IMAC, skip if build for RV64GC:
 $ ./patches/imac-patch.sh
 ```
 
-Make sure that the sdk is properly built:
+Update sdk example:
 ```
 $ cd sdk/
 $ sed -i 's/size_t[ ]*freemem_size[ ]*=[ ]*48/size_t freemem_size = 2/g' examples/tests/test-runner.cpp
@@ -151,7 +151,7 @@ after this step, a new app is generated and coppied to the keystone directory
 Update keystone-demo to keystone build folder:
 ```
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image -j`nproc`					#and update the bbl.bin there
+$ make image					#and update the bbl.bin there
 ```
 
 However, it will be a false attestation. To update the new hash value, do the followings:
