@@ -14,7 +14,7 @@ Note: because their prebuilt toolchain is RV64GC, so for the RV64IMAC build plea
 
 Git clone:
 ```
-$ git clone https://github.com/keystone-enclave/keystone.git keystone-rv64gc	#commit 21c77189 on 30-Aug-2020
+$ git clone -b dev https://github.com/keystone-enclave/keystone.git keystone-rv64gc	#commit e448fa32 on 19-Oct-2020
 $ cd keystone-rv64gc/
 ```
 
@@ -145,7 +145,7 @@ Make:
 $ cd keystone-demo-rv64/
 $ . source.sh
 $ ./quick-start.sh				#type Y when asked
-after this step, a new app is generated and coppied to the keystone directory
+$ . copybins.sh				#copy binaries to keystone overlay
 ```
 
 Update keystone-demo to keystone build folder:
@@ -157,14 +157,15 @@ $ make image					#and update the bbl.bin there
 However, it will be a false attestation. To update the new hash value, do the followings:
 ```
 $ cd ../../keystone-demo-rv64/			#first, cd back to the keystone-demo directory
-$ make getandsethash
-$ rm trusted_client.riscv
-$ make trusted_client.riscv
-$ make copybins
+$ ./scripts/get_attestation.sh ./include
+(if it stuck at "Power off", just Ctrl+C)
+$ rm build/trusted_client.riscv
+$ make -C build/ trusted_client.riscv
+$ . copybins.sh
 after this step, the app is updated with the correct hash value and coppied to the keystone directory
 
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image -j`nproc`					#and update the bbl.bin there
+$ make image					#and update the bbl.bin there
 ```
 
 * * *
@@ -184,7 +185,7 @@ $ time ./tests.ke				#ok if 'Attestation report SIGNATURE is valid' is printed
 
 To do the keystone-demo test:
 $ cd keystone-demo/			#go to the keystone-demo test
-$ ./enclave-host.riscv &			#run host in localhost
+$ ./demo-server.riscv &			#run host in localhost
 $ ./trusted_client.riscv localhost	#connect to localhost and test
 okay if the 'Attestation signature and enclave hash are valid' is printed
 exit the Security Monitor by:	$ q
