@@ -130,7 +130,7 @@ If build for RV64IMAC:		$ export RISCV=/opt/GCC8/riscv64imac		#point to RV64IMAC
 
 $ export PATH=$RISCV/bin/:$PATH
 $ export KEYSTONE_DIR=`pwd`
-$ export KEYSTONE_SDK_DIR=`pwd`/sdk
+$ export KEYSTONE_SDK_DIR=`pwd`/sdk/build
 $ export KEYSTONE_BUILD_DIR=`pwd`/build		#point to the build folder
 ```
 
@@ -154,8 +154,19 @@ $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
 $ make image					#and update the bbl.bin there
 ```
 
-However, it will be a false attestation. To update the new hash value, do the followings:
+Note: there is kind of a bug with "script/run-qemu.sh", so do this to make sure that the "script/run-qemu.sh" will run smoother later
 ```
+$ <open a new terminal>
+$ cd <to the keystone build folder>
+$ ./script/run-qemu.sh
+Log in by the id of "root" and the password of "sifive"
+Then exit qemu by "poweroff"
+If it got stuck with "Power off" then just close the terminal
+```
+
+To update the new hash value to the keystone-demo folder, do the followings:
+```
+Now go back with the original terminal ealier
 $ cd ../../keystone-demo-rv64/			#first, cd back to the keystone-demo directory
 $ ./scripts/get_attestation.sh ./include
 (if it stuck at "Power off", just Ctrl+C)
