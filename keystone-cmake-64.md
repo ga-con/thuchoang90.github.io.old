@@ -14,7 +14,7 @@ Note: because their prebuilt toolchain is RV64GC, so for the RV64IMAC build plea
 
 Git clone:
 ```
-$ git clone -b dev https://github.com/keystone-enclave/keystone.git keystone-rv64gc	#commit e448fa32 on 19-Oct-2020
+$ git clone -b dev https://github.com/keystone-enclave/keystone.git keystone-rv64gc		#commit e448fa32 on 19-Oct-2020
 $ cd keystone-rv64gc/
 ```
 
@@ -27,7 +27,7 @@ $ export KEYSTONE_DIR=`pwd`
 Download prebuilt toolchain:
 ```
 $ ./fast-setup.sh			#this will download the prebuilt toolchain (gcc-7.2) and set things up
-$ . source.sh		#update PATH
+$ . source.sh				#update PATH
 ```
 
 Update sdk examples:
@@ -46,7 +46,7 @@ $ mkdir build
 $ cd build/
 $ cmake ..
 $ make -j`nproc`
-$ make run-tests	#after this, a bbl.bin file is generated
+$ make run-tests		#after this, a bbl.bin file is generated
 ```
 
 ## I. b) Using our local toolchain (gcc-8.3 in this example)
@@ -98,7 +98,7 @@ $ mkdir build
 $ cd build/
 $ cmake ..
 $ make -j`nproc`
-$ make run-tests	#after this, a bbl.bin file is generated
+$ make run-tests		#after this, a bbl.bin file is generated
 ```
 
 * * *
@@ -136,7 +136,7 @@ $ export KEYSTONE_BUILD_DIR=`pwd`/build		#point to the build folder
 
 Git clone:
 ```
-$ cd ../			#go back outside
+$ cd ../		#go back outside
 $ git clone -b cmake https://github.com/thuchoang90/keystone-demo.git keystone-demo-rv64
 ```
 
@@ -144,14 +144,14 @@ Make:
 ```
 $ cd keystone-demo-rv64/
 $ . source.sh
-$ ./quick-start.sh				#type Y when asked
-$ . copybins.sh				#copy binaries to keystone overlay
+$ ./quick-start.sh			#type Y when asked
+$ . copybins.sh			#copy binaries to keystone overlay
 ```
 
 Update keystone-demo to keystone build folder:
 ```
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image					#and update the bbl.bin there
+$ make image						#and update the bbl.bin there
 ```
 
 Note: there is kind of a bug with "script/run-qemu.sh", so do this to make sure that the "script/run-qemu.sh" will run smoother later
@@ -176,7 +176,7 @@ $ . copybins.sh
 after this step, the app is updated with the correct hash value and coppied to the keystone directory
 
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image					#and update the bbl.bin there
+$ make image						#and update the bbl.bin there
 ```
 
 * * *
