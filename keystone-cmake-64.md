@@ -109,8 +109,8 @@ Check PATH:
 - Pair with the prebuilt-toolchain of Keystone: *(Note: prebuilt-toolchain is RV64GC, so if you want to build for RV64IMAC please follow the local-built-toolchain)*
 
 ```
-$ echo ${PATH}					#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH
-$ cd keystone-rv64gc/				#go to your keystone folder
+$ echo ${PATH}				#and MAKE SURE that NO ANY TOOLCHAIN is on the PATH
+$ cd keystone-rv64gc/			#go to your keystone folder
 $ . source.sh
 $ export KEYSTONE_DIR=`pwd`
 $ export KEYSTONE_BUILD_DIR=`pwd`/build		#point to the build folder
@@ -123,7 +123,7 @@ $ export KEYSTONE_BUILD_DIR=`pwd`/build		#point to the build folder
 $ cd keystone-rv64gc-local/
 Or: $ cd keystone-rv64imac/
 
-$ echo ${PATH}			#check if our toolchain is on the PATH or not
+$ echo ${PATH}		#check if our toolchain is on the PATH or not
 # if not then export it to PATH
 If build for RV64GC:		$ export RISCV=/opt/GCC8/riscv64gc			#point to RV64GC toolchain
 If build for RV64IMAC:		$ export RISCV=/opt/GCC8/riscv64imac		#point to RV64IMAC toolchain
@@ -144,14 +144,14 @@ Make:
 ```
 $ cd keystone-demo-rv64/
 $ . source.sh
-$ ./quick-start.sh			#type Y when asked
-$ . copybins.sh			#copy binaries to keystone overlay
+$ ./quick-start.sh		#type Y when asked
+$ . copybins.sh		#copy binaries to keystone overlay
 ```
 
 Update keystone-demo to keystone build folder:
 ```
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image						#and update the bbl.bin there
+$ make image							#and update the bbl.bin there
 ```
 
 Note: there is kind of a bug with "script/run-qemu.sh", so do this to make sure that the "script/run-qemu.sh" will run smoother later
@@ -176,7 +176,7 @@ $ . copybins.sh
 after this step, the app is updated with the correct hash value and coppied to the keystone directory
 
 $ cd ${KEYSTONE_BUILD_DIR}		#now go back to the keystone folder
-$ make image						#and update the bbl.bin there
+$ make image							#and update the bbl.bin there
 ```
 
 * * *
