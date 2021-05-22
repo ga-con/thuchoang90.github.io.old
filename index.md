@@ -16,6 +16,8 @@ The page first is for my self-study, second is for helping newcomers to computer
 
 - [Verilog Basic Labs Solution:] *the reference solutions for the above exercises*.
 
+- [Other tutorials:] *guide how to write testbench, how to use ModelSim, SignalTap, etc*.
+
 * * *
 
 <p style="text-align:center">INITIAL SETUP</p>
