@@ -4,11 +4,9 @@ layout: default
 
 This page is created by Trong-Thuc Hoang.
 
-Currently, he is a Ph.D. candidate at the University of Electro-Communications (UEC), Tokyo, Japan, and also a research assistant at the National Institute of Advanced Industrial Science and Technology (AIST), Tokyo, Japan.
+A Ph.D. candidate at UEC and also a research assistant at AIST, both facilities are in Tokyo, Japan.
 
-This page first is for my self-study, second is for helping newcomers to understand RISC-V.
-
-The guide in this tutorial has the following contents:
+The page first is for my self-study, second is for helping newcomers to computer science.
 
 * * *
 
