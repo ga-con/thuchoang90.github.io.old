@@ -1,5 +1,2 @@
-title: THUCTORIAL
-description: Thuc's tutorials, open-source projects, and more.
-show_downloads:
-google_analytics: true
-theme: jekyll-theme-leap-day
+# theme: owner/name --> Don't forget to remove/comment the gem-based theme option
+remote_theme: "jeffreytse/jekyll-theme-yat"
