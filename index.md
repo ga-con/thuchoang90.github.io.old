@@ -2,9 +2,7 @@
 layout: default
 ---
 
-This page is created by Trong-Thuc Hoang.
-
-A Ph.D. candidate at UEC and also a research assistant at AIST; both facilities are in Tokyo, Japan.
+This page is created by Trong-Thuc Hoang. \[[Biography](./bio.md)\]
 
 The page first is for my self-study, second is for helping newcomers to computer science.
 
